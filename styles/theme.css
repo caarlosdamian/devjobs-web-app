@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .background-lightGrey_midnigth {
+        @apply bg-secondary-lightGrey dark:bg-primary-midnight;
+    }
+
+    .background-violet_white {
+        @apply bg-primary-violet dark:bg-secondary-white;
+    }
+
+    .background-white_veryDarkBlue {
+        @apply bg-secondary-white dark:bg-primary-veryDarkBlue;
+    }
+
+    .background-veryDarkBlue_white {
+        @apply bg-primary-veryDarkBlue dark:bg-secondary-white;
+    }
+
+    .background-darkGrey_gray {
+        @apply bg-secondary-darkGrey dark:bg-secondary-Gray !important;
+    }
+
+    .text-veryDarkBlue_white {
+        @apply text-primary-veryDarkBlue dark:text-secondary-white !important;
+    }
+
+    .text-veryDarkBlue_whiteOpacity {
+        @apply text-primary-veryDarkBlue dark:text-secondary-white dark:opacity-5 !important;
+    }
+
+    .text-darkGrey {
+        @apply text-secondary-darkGrey;
+    }
+
+    .text-darkGrey_gray {
+        @apply text-secondary-darkGrey dark:text-secondary-Gray !important;
+    }
+
+    .h1-bold {
+        @apply text-[28] font-bold leading-normal tracking-tighter;
+    }
+
+    .h2-bold {
+        @apply text-[24px] font-bold leading-[31.2px];
+    }
+
+    .h2-semibold {
+        @apply text-[24px] font-semibold leading-[31.2px];
+    }
+
+    .h3-bold {
+        @apply text-[20px] font-bold leading-[26px];
+    }
+
+    .h3-semibold {
+        @apply text-[20px] font-semibold leading-[24.8px];
+    }
+
+    .base {
+        @apply text-[16px] font-normal leading-normal;
+    }
+
+    .base-normal {
+        @apply text-[16px] font-normal leading-[26px];
+    }
+
+    .base-bold {
+        @apply text-[14px] font-bold leading-normal;
+    }
+
+    .paragraph-regular {
+        @apply text-[16px] font-normal leading-[22.4px];
+    }
+
+    .paragraph-medium {
+        @apply text-[16px] font-medium leading-[22.4px];
+    }
+
+    .paragraph-semibold {
+        @apply text-[16px] font-semibold leading-[20.8px];
+    }
+
+    .body-regular {
+        @apply text-[14px] font-normal leading-[19.6px];
+    }
+
+    .body-medium {
+        @apply text-[14px] font-medium leading-[18.2px];
+    }
+
+    .body-semibold {
+        @apply text-[14px] font-semibold leading-[18.2px];
+    }
+
+    .small-regular {
+        @apply text-[12px] font-normal leading-[15.6px];
+    }
+
+    .small-medium {
+        @apply text-[12px] font-medium leading-[15.6px];
+    }
+
+    .small-semibold {
+        @apply text-[12px] font-semibold leading-[15.6px];
+    }
+
+    .subtle-medium {
+        @apply text-[10px] font-medium leading-[13px] !important;
+    }
+
+    .subtle-regular {
+        @apply text-[10px] font-normal leading-[13px];
+    }
+}
