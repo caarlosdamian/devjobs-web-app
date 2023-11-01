@@ -39,16 +39,19 @@
         @apply text-secondary-darkGrey dark:text-secondary-Gray !important;
     }
 
+
+
+
     .h1-bold {
-        @apply text-[28] font-bold leading-normal tracking-tighter;
+        @apply text-xl xl:text-[28] font-bold leading-normal tracking-tighter;
     }
 
     .h2-bold {
-        @apply text-[24px] font-bold leading-[31.2px];
+        @apply text-xl xl:text-[24px] font-bold leading-[31.2px];
     }
 
     .h2-semibold {
-        @apply text-[24px] font-semibold leading-[31.2px];
+        @apply text-xl xl:text-[24px] font-semibold leading-[31.2px];
     }
 
     .h3-bold {
