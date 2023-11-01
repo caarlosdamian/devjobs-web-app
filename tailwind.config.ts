@@ -1,7 +1,7 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
-  darkMode: ["class"],
+  darkMode: ['class'],
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -10,39 +10,34 @@ const config: Config = {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: '2rem',
       screens: {
-        "2xl": "1400px",
+        '2xl': '1400px',
       },
     },
     extend: {
       backgroundImage: {
-        "principal": "url('/assets/images/auth-dark.png')",
+        principal: "url('/assets/images/auth-dark.png')",
       },
       colors: {
         primary: {
-          violet: "#5964E0",
-          lightViolet: "#939BF4",
+          violet: '#5964E0',
+          lightViolet: '#939BF4',
+          veryDarkBlue: '#19202D',
+          midnight: '#121721',
         },
-        dark: {
-          100: "#000000",
-          200: "#0F1117",
-          300: "#151821",
-          400: "#212734",
-          500: "#101012",
+        secondary: {
+          white: '#FFFFFF',
+          lightGrey: '#F4F6F8',
+          Gray: '#9DAEC2',
+          darkGrey: '#6E8098',
         },
-        light: {
-          900: "#FFFFFF",
-          800: "#F4F6F8",
-          850: "#FDFDFD",
-          700: "#DCE3F1",
-          500: "#7B8EC8",
-          400: "#858EAD",
-        },
-        "accent-blue": "#1DA1F2",
+      },
+      fontFamily: {
+        kumbhSans: ["var(--font-kumbhSans)"],
       },
     },
   },
   plugins: [],
-}
-export default config
+};
+export default config;
