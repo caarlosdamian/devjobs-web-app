@@ -17,7 +17,9 @@ const config: Config = {
     },
     extend: {
       backgroundImage: {
-        principal: "url('/assets/images/auth-dark.png')",
+        headerMobile: "url('/assets/mobile/bg-pattern-header.svg')",
+        headerDesktop: "url('/assets/desktop/bg-pattern-header.svg')",
+        headerTablet: "url('/assets/tablet/bg-pattern-header.svg')",
       },
       colors: {
         primary: {
