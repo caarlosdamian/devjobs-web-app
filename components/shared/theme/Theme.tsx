@@ -6,10 +6,9 @@ import React, { useState } from 'react';
 export const Theme = () => {
   const { mode, setMode } = useTheme();
 
-  const handletheme = () => {
-    const modeUpdate = mode === 'dark' ? 'light' : 'dark'
-    setMode(modeUpdate);
-    localStorage.theme = modeUpdate;
+  const handletheme = (newMode: string) => {
+    setMode(newMode);
+    localStorage.theme = newMode;
   };
 
   return (
@@ -19,10 +18,12 @@ export const Theme = () => {
         alt="logo"
         width={20}
         height={20}
+        onClick={() => handletheme('light')}
+        className="cursor-pointer"
       />
       <div
-        className="bg-white rounded-xl h-6 w-12 p-1 relative"
-        onClick={handletheme}
+        className="bg-white rounded-xl h-6 w-12 p-1 relative cursor-pointer"
+        onClick={() => handletheme(mode === 'dark' ? 'light' : 'dark')}
       >
         <div
           className={`absolute left-1 top-1 h-[15px] w-[15px] bg-primary-violet rounded-2xl ease-in-out duration-300 transition-all  ${
@@ -35,6 +36,8 @@ export const Theme = () => {
         alt="logo"
         width={20}
         height={20}
+        onClick={() => handletheme('dark')}
+        className="cursor-pointer"
       />
     </div>
   );
