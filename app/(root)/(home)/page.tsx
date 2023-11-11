@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 export default function Home() {
   return (
-    <main className="">
+    <main className="relative">
       <MobileSearch />
     </main>
   );

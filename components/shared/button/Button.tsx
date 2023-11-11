@@ -1,5 +1,10 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 
-export const Button = () => {
-  return <div>Button</div>;
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+  children?: React.ReactNode;
+  label?: string;
+}
+
+export const Button = ({ children, label, ...props }: Props) => {
+  return <button {...props}>{children ? children : label}</button>;
 };
