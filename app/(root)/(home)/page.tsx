@@ -1,11 +1,13 @@
 'use client';
+import { DesktopSearch } from '@/components/search/desktopSearch/DesktopSearch';
 import { MobileSearch } from '@/components/search/mobileSearch/MobileSearch';
-import { useEffect } from 'react';
+import { useWidth } from '@/hooks/useMobile';
 
 export default function Home() {
+  const { isMobile } = useWidth();
   return (
     <main className="relative">
-      <MobileSearch />
+      {isMobile ? <MobileSearch /> : <DesktopSearch />}
     </main>
   );
 }
