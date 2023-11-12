@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import { Navbar } from '@/components/shared/navbar/Navbar';
 import '../../globals.css';
 import { ThemeProvider } from '@/context/ThemeContext';
+import { SearchContextProvider } from '@/context/SearchContext';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,12 +20,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ThemeProvider>
-        <body
-          className={`${inter.className} background-lightGrey_midnigth flex flex-col items-center w-screen h-full`}
-        >
-          <Navbar />
-          {children}
-        </body>
+        <SearchContextProvider>
+          <body
+            className={`${inter.className} background-lightGrey_midnigth flex flex-col items-center w-screen h-full`}
+          >
+            <Navbar />
+            {children}
+          </body>
+        </SearchContextProvider>
       </ThemeProvider>
     </html>
   );
