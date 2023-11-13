@@ -34,7 +34,6 @@ export interface SearchContextProps {
   dispatch: Dispatch<ChangeAction>;
 }
 
-
 export interface InputObject {
   id: string;
   alt: string;

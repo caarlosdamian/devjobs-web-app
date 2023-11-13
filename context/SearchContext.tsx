@@ -14,22 +14,20 @@ export const SearchContextProvider = ({
   children: ReactNode;
 }) => {
   const handleChange = (
-    state: JobInfo[],
+    _: JobInfo[],
     { type, payload }: ChangeAction
   ): JobInfo[] => {
     console.log(payload);
     if (payload !== '') {
       switch (type) {
         case 'location':
-          return genericFilter(state, payload, 'location');
+          return genericFilter(jobsInfo, payload, 'location');
         case 'title':
-          return genericFilter(state, payload, 'position');
+          return genericFilter(jobsInfo, payload, 'position');
         case 'contract':
-          // Handle contract change
-          break;
+          return genericFilter(jobsInfo, 'Full Time', 'contract');
         default:
           return jobsInfo;
-          break;
       }
     }
 
