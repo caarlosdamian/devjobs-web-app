@@ -4,6 +4,7 @@ import { Navbar } from '@/components/shared/navbar/Navbar';
 import '../../globals.css';
 import { ThemeProvider } from '@/context/ThemeContext';
 import { SearchContextProvider } from '@/context/SearchContext';
+import { ModalRenderer } from '@/components/modal/ModalRenderer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
           <body
             className={`${inter.className} background-lightGrey_midnigth flex flex-col items-center w-screen h-full`}
           >
+               <ModalRenderer/>
             <Navbar />
             {children}
           </body>

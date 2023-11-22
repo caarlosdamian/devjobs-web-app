@@ -17,7 +17,6 @@ export const SearchContextProvider = ({
     _: JobInfo[],
     { type, payload }: ChangeAction
   ): JobInfo[] => {
-    console.log(payload);
     if (payload !== '') {
       switch (type) {
         case 'location':
