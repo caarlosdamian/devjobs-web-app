@@ -22,15 +22,24 @@ export interface JobInfo {
   };
 }
 
-export type ActionType = 'location' | 'title' | 'contract';
+export type ActionType = 'location' | 'position' | 'contract' | 'search';
 
 export interface ChangeAction {
   type: ActionType;
-  payload: string;
+  payload: string | null;
+}
+
+export interface SearchFilterI {
+  [key: string]: string;
+}
+
+export interface StateI {
+  data: JobInfo[];
+  search: SearchFilterI;
 }
 
 export interface SearchContextProps {
-  state: JobInfo[];
+  state: StateI;
   dispatch: Dispatch<ChangeAction>;
 }
 

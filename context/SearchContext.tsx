@@ -1,6 +1,6 @@
 'use client';
 import { jobsInfo } from '@/constants/data';
-import { ChangeAction, SearchContextProps, JobInfo } from '@/types';
+import { ChangeAction, SearchContextProps, JobInfo, StateI } from '@/types';
 import { genericFilter } from '@/utils';
 import { createContext, useContext, useReducer, ReactNode } from 'react';
 
@@ -14,26 +14,69 @@ export const SearchContextProvider = ({
   children: ReactNode;
 }) => {
   const handleChange = (
-    _: JobInfo[],
+    state: StateI,
     { type, payload }: ChangeAction
-  ): JobInfo[] => {
+  ): StateI => {
+    
     if (payload !== '') {
       switch (type) {
         case 'location':
-          return genericFilter(jobsInfo, payload, 'location');
-        case 'title':
-          return genericFilter(jobsInfo, payload, 'position');
+          return {
+            ...state,
+            search: { ...state.search, [type]: payload as string },
+          };
+        case 'position':
+          return {
+            ...state,
+            search: { ...state.search, [type]: payload as string },
+          };
         case 'contract':
-          return genericFilter(jobsInfo, 'Full Time', 'contract');
+          if (state.search.contract === 'Full Time') {
+            return {
+              ...state,
+              search: {
+                ...state.search,
+                contract: '',
+              },
+            };
+          } else {
+            return {
+              ...state,
+              search: {
+                ...state.search,
+                contract: 'Full Time',
+              },
+            };
+          }
+
+        case 'search':
+          return {
+            ...state,
+            data: genericFilter(jobsInfo, state.search),
+          };
         default:
-          return jobsInfo;
+          return {
+            data: jobsInfo,
+            search: {
+              location: '',
+              position: '',
+              contract: '',
+            },
+          };
       }
     }
 
-    return jobsInfo;
+    return state;
   };
 
-  const [state, dispatch] = useReducer(handleChange, jobsInfo);
+  const [state, dispatch] = useReducer(handleChange, {
+    data: jobsInfo,
+    search: {
+      location: '',
+      position: '',
+      contract: '',
+    },
+  });
 
   return (
     <SearchContext.Provider value={{ state, dispatch }}>

@@ -537,7 +537,7 @@ export const filterInputsDesktop: InputObject[] = [
     className: 'lg:w-[308px]',
     height: 24,
     width: 24,
-    type: 'title',
+    type: 'position',
   },
   {
     id: 'inputb',

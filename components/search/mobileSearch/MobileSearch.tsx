@@ -11,19 +11,24 @@ import React, { useState } from 'react';
 
 export const MobileSearch = () => {
   const { mode } = useTheme();
-  const [filter, setFilter] = useState<ActionType>('title'); // esto se cambiara con el modal cambiando el filtrado
+  const [filter, setFilter] = useState<ActionType>('position'); // esto se cambiara con el modal cambiando el filtrado
   const { dispatch } = useSearchContext();
   const filterModal = useModal<any>(Modals.FilterModal);
 
+  const handleSearch = () => {
+    console.log('entrando')
+    dispatch({ type: 'search', payload: null });
+  };
+
   const displayEditModal = () => {
     filterModal.open({
-      name: 'Probando',
+      dispatch,
       onSave: () => {
-        filterModal.close()
+        filterModal.close();
       },
-      onCancel: filterModal.close 
-    })
-  }
+      onCancel: filterModal.close,
+    });
+  };
   return (
     <section className="flex-between rounded-md background-white_veryDarkBlue px-6 py-8 min-w-[328px] h-20 absolute right-2/4 left-2/4 transform -translate-x-1/2 -translate-y-1/2 text-white">
       <Input
@@ -42,7 +47,7 @@ export const MobileSearch = () => {
           height={20}
           onClick={displayEditModal}
         />
-        <Button className="btn p-4">
+        <Button className="btn p-4" onClick={handleSearch}>
           <Image
             src="assets/desktop/icon-search-white.svg"
             alt="search"

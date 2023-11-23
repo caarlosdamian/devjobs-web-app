@@ -1,17 +1,20 @@
-import { JobInfo } from '@/types';
+import { JobInfo, SearchFilterI } from '@/types';
 
 export const genericFilter = <K extends keyof JobInfo>(
   state: JobInfo[],
-  payload: string,
-  filterKey: K
+  filters: SearchFilterI
 ) => {
   return state.filter((job) => {
-    const value = job[filterKey];
-
-    if (typeof value === 'string') {
-      return value.toLocaleLowerCase().includes(payload.toLocaleLowerCase());
-    }
-
-    return false;
+    return (
+      job.location
+        .toLocaleLowerCase()
+        .includes(filters.location.toLocaleLowerCase()) &&
+      job.position
+        .toLocaleLowerCase()
+        .includes(filters.position.toLocaleLowerCase()) &&
+      job.contract
+        .toLocaleLowerCase()
+        .includes(filters.contract.toLocaleLowerCase())
+    );
   });
 };
