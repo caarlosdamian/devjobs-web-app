@@ -26,11 +26,13 @@ export type ActionType = 'location' | 'position' | 'contract' | 'search';
 
 export interface ChangeAction {
   type: ActionType;
-  payload: string | null;
+  payload?: string | null;
 }
 
 export interface SearchFilterI {
-  [key: string]: string;
+  location: string;
+  position: string;
+  contract: string;
 }
 
 export interface StateI {
@@ -52,4 +54,9 @@ export interface InputObject {
   height: number;
   width: number;
   type: ActionType;
+}
+
+export interface FilterModalProps {
+  onSave: () => void;
+  onCancel: () => void;
 }

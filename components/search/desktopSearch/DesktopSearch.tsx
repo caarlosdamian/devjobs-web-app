@@ -3,9 +3,13 @@ import { Input } from '@/components/input/Input';
 import { Button } from '@/components/shared/button/Button';
 import { filterInputsDesktop } from '@/constants/data';
 import { useSearchContext } from '@/context/SearchContext';
+import Fulltime from '../fullTime/Fulltime';
+import { useSearch } from '@/hooks/useSearch';
 
 export const DesktopSearch = () => {
   const { dispatch } = useSearchContext();
+  const { handleSearch } = useSearch();
+
   return (
     <div
       className="flex items-center h-20 gap-5 
@@ -30,18 +34,11 @@ export const DesktopSearch = () => {
         </React.Fragment>
       ))}
       <div className="flex items-center gap-7 w-full justify-between">
-        <div className="flex items-center gap-4 cursor-pointer">
-          <div className="w-6 h-6 bg-secondary-lightGrey"></div>
-          <span className="text-veryDarkBlue_white paragraph-semibold lg:hidden">
-            Full Time
-          </span>
-          <span className="text-veryDarkBlue_white paragraph-semibold hidden lg:flex">
-            Full Time Only
-          </span>
-        </div>
+        <Fulltime />
         <Button
           label="Search"
           className="btn px-[14px] py-4 text-white lg:px-9"
+          onClick={handleSearch}
         />
       </div>
     </div>

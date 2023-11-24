@@ -17,56 +17,53 @@ export const SearchContextProvider = ({
     state: StateI,
     { type, payload }: ChangeAction
   ): StateI => {
-    
-    if (payload !== '') {
-      switch (type) {
-        case 'location':
-          return {
-            ...state,
-            search: { ...state.search, [type]: payload as string },
-          };
-        case 'position':
-          return {
-            ...state,
-            search: { ...state.search, [type]: payload as string },
-          };
-        case 'contract':
-          if (state.search.contract === 'Full Time') {
-            return {
-              ...state,
-              search: {
-                ...state.search,
-                contract: '',
-              },
-            };
-          } else {
-            return {
-              ...state,
-              search: {
-                ...state.search,
-                contract: 'Full Time',
-              },
-            };
-          }
+    console.log(payload);
 
-        case 'search':
+    switch (type) {
+      case 'location':
+        return {
+          ...state,
+          search: { ...state.search, [type]: payload as string },
+        };
+      case 'position':
+        return {
+          ...state,
+          search: { ...state.search, [type]: payload as string },
+        };
+      case 'contract':
+        if (state.search.contract === 'Full Time') {
           return {
             ...state,
-            data: genericFilter(jobsInfo, state.search),
-          };
-        default:
-          return {
-            data: jobsInfo,
             search: {
-              location: '',
-              position: '',
+              ...state.search,
               contract: '',
             },
           };
-      }
-    }
+        } else {
+          return {
+            ...state,
+            search: {
+              ...state.search,
+              contract: 'Full Time',
+            },
+          };
+        }
 
-    return state;
+      case 'search':
+        return {
+          ...state,
+          data: genericFilter(jobsInfo, state.search),
+        };
+      default:
+        return {
+          data: jobsInfo,
+          search: {
+            location: '',
+            position: '',
+            contract: '',
+          },
+        };
+    }
   };
 
   const [state, dispatch] = useReducer(handleChange, {
