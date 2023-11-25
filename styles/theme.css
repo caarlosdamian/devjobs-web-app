@@ -55,7 +55,7 @@
     }
 
     .h3-bold {
-        @apply text-[20px] font-bold leading-[26px];
+        @apply text-[20px] font-bold leading-normal;
     }
 
     .h3-semibold {
