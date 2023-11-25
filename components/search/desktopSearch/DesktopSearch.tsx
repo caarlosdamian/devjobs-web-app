@@ -12,13 +12,15 @@ export const DesktopSearch = () => {
 
   return (
     <div
-      className="flex items-center h-20 gap-5 
-    pl-6 pr-6 background-white_veryDarkBlue 
-    rounded-md absolute right-2/4 left-2/4 transform -translate-x-1/2 -translate-y-1/2 
-    min-w-[689px] lg:min-w-[1110px] lg:gap-8"
+      className="w-full flex justify-between h-20 gap-5 
+    px-3 xl:px-6 background-white_veryDarkBlue 
+    rounded-md lg:gap-8 min-w-[720px] max-sm:hidden"
     >
       {filterInputsDesktop.map((input) => (
-        <React.Fragment key={input.id}>
+        <div
+          className="flex items-center justify-between flex-1"
+          key={input.id}
+        >
           <Input
             className={`max-w-[145px] lg:max-w-full ${input.className}`}
             placeholder={input.placeholder}
@@ -31,13 +33,13 @@ export const DesktopSearch = () => {
             }
           />
           <div className="w-[1px] bg-secondary-darkGrey opacity-30 h-full" />
-        </React.Fragment>
+        </div>
       ))}
-      <div className="flex items-center gap-7 w-full justify-between">
+      <div className="flex items-center justify-between gap-7 w-full flex-1">
         <Fulltime />
         <Button
           label="Search"
-          className="btn px-[14px] py-4 text-white lg:px-9"
+          className="btn px-[14px] py-4 text-white xl:px-9"
           onClick={handleSearch}
         />
       </div>

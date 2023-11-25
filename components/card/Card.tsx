@@ -18,7 +18,7 @@ export const Card = ({
   },
 }: Props) => {
   return (
-    <div className="relative w-full h-full background-white_veryDarkBlue rounded-md py-9 pl-8 flex flex-col gap-11 max-w-[339px] lg:max-w-[350px]">
+    <div className="relative w-full h-full background-white_veryDarkBlue rounded-md py-9 px-8 flex flex-col gap-11  lg:max-w-[428px]">
       <div
         className={`flex items-center justify-center h-[50px] w-[50px] rounded-xl  absolute top-[-24px] left-[32px]`}
         style={{ background: logoBackground }}

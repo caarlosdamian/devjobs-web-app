@@ -28,7 +28,7 @@ export const MobileSearch = () => {
     });
   };
   return (
-    <section className="flex-between rounded-md background-white_veryDarkBlue px-6 py-8 min-w-[328px] h-20 absolute right-2/4 left-2/4 transform -translate-x-1/2 -translate-y-1/2 text-white">
+    <section className="flex-between rounded-md background-white_veryDarkBlue px-6 py-8 w-full  h-20  text-white sm:hidden">
       <Input
         placeholder={`Filter by position`}
         onChange={(e) =>

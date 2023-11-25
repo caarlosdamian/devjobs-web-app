@@ -1,5 +1,4 @@
 import { useSearchContext } from '@/context/SearchContext';
-import { ChangeAction } from '@/types';
 import Image from 'next/image';
 import React, { useMemo } from 'react';
 
@@ -36,13 +35,13 @@ const Fulltime = ({ mobile }: Props) => {
         )}
       </div>
       {!mobile && (
-        <span className="text-veryDarkBlue_white paragraph-semibold lg:hidden">
+        <span className="text-veryDarkBlue_white paragraph-semibold xl:hidden">
           Full Time
         </span>
       )}
       <span
         className={`text-veryDarkBlue_white paragraph-semibold ${
-          mobile ? '' : ' hidden lg:flex'
+          mobile ? '' : ' hidden xl:flex'
         }`}
       >
         Full Time Only
