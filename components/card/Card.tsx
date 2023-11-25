@@ -4,6 +4,7 @@ import React from 'react';
 
 interface Props {
   job: JobInfo;
+  className?:string
 }
 
 export const Card = ({
@@ -16,9 +17,10 @@ export const Card = ({
     logo,
     logoBackground,
   },
+  className
 }: Props) => {
   return (
-    <div className="relative w-full h-full background-white_veryDarkBlue rounded-md py-9 px-8 flex flex-col gap-11  lg:max-w-[428px]">
+    <div className={`relative w-full h-full background-white_veryDarkBlue rounded-md py-9 px-8 flex flex-col gap-11  lg:max-w-[428px] ${className}`}>
       <div
         className={`flex items-center justify-center h-[50px] w-[50px] rounded-xl  absolute top-[-24px] left-[32px]`}
         style={{ background: logoBackground }}

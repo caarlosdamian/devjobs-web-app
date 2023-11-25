@@ -17,7 +17,6 @@ export const SearchContextProvider = ({
     state: StateI,
     { type, payload }: ChangeAction
   ): StateI => {
-    console.log(payload);
 
     switch (type) {
       case 'location':
