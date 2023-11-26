@@ -39,7 +39,7 @@ export const DesktopSearch = () => {
         <Fulltime />
         <Button
           label="Search"
-          className="btn px-[14px] py-4 text-white xl:px-9 hover:bg-primary-lightViolet"
+          className="btn px-[14px] py-4 text-white xl:px-9"
           onClick={handleSearch}
         />
       </div>

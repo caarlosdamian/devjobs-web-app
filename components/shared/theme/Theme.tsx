@@ -12,7 +12,7 @@ export const Theme = () => {
   };
 
   return (
-    <div className="flex items-center gap-4">
+    <div className="group flex items-center gap-4">
       <Image
         src="assets/desktop/icon-sun.svg"
         alt="logo"
@@ -26,7 +26,7 @@ export const Theme = () => {
         onClick={() => handletheme(mode === 'dark' ? 'light' : 'dark')}
       >
         <div
-          className={`absolute left-1 top-1 h-[15px] w-[15px] bg-primary-violet rounded-2xl ease-in-out duration-300 transition-all  ${
+          className={`group-hover:bg-primary-lightViolet absolute left-1 top-1 h-[15px] w-[15px] bg-primary-violet rounded-2xl ease-in-out duration-300 transition-all  ${
             mode === 'dark' && 'translate-x-6'
           }`}
         ></div>

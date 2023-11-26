@@ -37,7 +37,7 @@ export default function Home() {
         <div className="flex items-center justify-center w-full">
           <Button
             label="Load More"
-            className="btn p-4 !hover:bg-primary-lightViolet text-white"
+            className="btn p-4 text-white"
             onClick={() => setLoad(true)}
           />
         </div>

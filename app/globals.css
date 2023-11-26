@@ -32,7 +32,7 @@ body {
   }
 
   .btn {
-    @apply bg-primary-violet rounded-[5px] !important;
+    @apply bg-primary-violet rounded-[5px] hover:bg-primary-lightViolet !important;
   }
 
   .btn-secondary {

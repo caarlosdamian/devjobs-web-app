@@ -1,10 +1,11 @@
 import { JobInfo } from '@/types';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 interface Props {
   job: JobInfo;
-  className?:string
+  className?: string;
 }
 
 export const Card = ({
@@ -16,11 +17,15 @@ export const Card = ({
     location,
     logo,
     logoBackground,
+    id,
   },
-  className
+  className,
 }: Props) => {
   return (
-    <div className={`relative w-full h-full background-white_veryDarkBlue rounded-md py-9 px-8 flex flex-col gap-11  lg:max-w-[428px] ${className}`}>
+    <Link
+      href={`/${id}`}
+      className={`relative w-full h-full background-white_veryDarkBlue rounded-md py-9 px-8 flex flex-col gap-11  lg:max-w-[428px] ${className}`}
+    >
       <div
         className={`flex items-center justify-center h-[50px] w-[50px] rounded-xl  absolute top-[-24px] left-[32px]`}
         style={{ background: logoBackground }}
@@ -45,6 +50,6 @@ export const Card = ({
       <div className="">
         <span className="text-primary-violet base-bold">{location}</span>
       </div>
-    </div>
+    </Link>
   );
 };
